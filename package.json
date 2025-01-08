@@ -9,7 +9,6 @@
 		"dev:svelte": "vite dev",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"test": "vitest",
 		"watch": "svelte-kit sync && svelte-package --watch"
 	},
   "files": [
