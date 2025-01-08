@@ -3,7 +3,7 @@
 	import ButtonSlider from '$lib/slider/ButtonSlider.svelte';
 	import type { SliderProps } from '../types.js';
 
-	let { cardItems, buttonProps }: SliderProps = $props();
+	let { cardItems, buttonProps, Item }: SliderProps = $props();
 
 	let scrollContainer = $state<HTMLUListElement>();
 	let showLeftButton = $state(false);
@@ -47,7 +47,7 @@
 </script>
 
 <div class="relative">
-	<SliderContainer bind:scrollContainer scrollEvent={checkScrollButtons} {cardItems} />
+	<SliderContainer bind:scrollContainer scrollEvent={checkScrollButtons} {cardItems} {Item} />
 
 	{#if showRightButton}
 		<ButtonSlider

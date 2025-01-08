@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SliderContainerProps } from '../types.js';
 
-	let { scrollContainer = $bindable(), cardItems, scrollEvent }: SliderContainerProps = $props();
+	let { scrollContainer = $bindable(), cardItems, scrollEvent, Item }: SliderContainerProps = $props();
 </script>
 
 <ul
@@ -10,6 +10,6 @@
 	onscroll={scrollEvent}
 >
 	{#each cardItems as item}
-		{@render item.Item(item.data)}
+		{@render Item(item.data)}
 	{/each}
 </ul>

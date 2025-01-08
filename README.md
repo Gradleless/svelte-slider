@@ -1,10 +1,6 @@
 # Svelte-slider
 
-A modern, customizable slider component built for Svelte 5.
-
-## Installation
-
-There's not.
+A modern, customizable slider component built for Svelte 5. (Kinda poorly written)
 
 ## Features
 
@@ -24,15 +20,17 @@ import type { SliderItem } from 'svelte-slider';
 
 const cardItems: SliderItem[] = [
                                     {
-                                        Item: Your Snippet,
-                                        href: '/link',
                                         data: { / your card data / }
                                     }
                                 ];
 
 </script>
 
-<Slider {cardItems} />
+<Slider {cardItems} {Item} />
+
+{#snippet Item()}
+    <!-- Ur snippet -->
+{/snippet}
 ```
 
 ## Components
@@ -45,6 +43,7 @@ The main component that orchestrates the slider functionality.
 
 - `cardItems`: Array of `SliderItem` objects
 - `buttonProps`: (Optional) Customization options for the slider buttons
+- `Item`: Snippet of your items
 
 ### ButtonSlider
 
@@ -69,6 +68,7 @@ Contains the scrollable content of the slider.
 - `scrollContainer`: Reference to the container element
 - `cardItems`: Array of items to display
 - `scrollEvent`: Function to handle scroll events
+- `Item`: Snippet of your items
 
 ## Types
 
@@ -107,6 +107,7 @@ The slider comes with default styling using Tailwind CSS, but you can customize 
         iconClasses: "your-custom-icon-classes",
         gradientClasses: "your-custom-gradient-classes"
     }}
+    {Item}
 />
 ```
 

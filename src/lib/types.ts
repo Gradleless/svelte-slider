@@ -2,12 +2,11 @@ import type { Snippet } from 'svelte';
 import type { Icon as IconType } from 'lucide-svelte';
 
 interface SliderItem {
-	Item: Snippet<[any]>;
-	href: string;
 	data: any;
 }
 
 interface SliderProps {
+	Item: Snippet<[any]>;
 	cardItems: SliderItem[];
 	buttonProps?: ButtonSliderR;
 }
@@ -25,6 +24,7 @@ interface ButtonSliderProps extends ButtonSliderR {
 }
 
 interface SliderContainerProps {
+	Item: Snippet<[any]>;
 	scrollContainer: HTMLUListElement | undefined;
 	cardItems: SliderProps['cardItems'];
 	scrollEvent: () => void;
