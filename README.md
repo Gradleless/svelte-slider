@@ -1,58 +1,123 @@
-# create-svelte
+# Svelte-slider
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A modern, customizable slider component built for Svelte 5.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Installation
 
-## Creating a project
+There's not.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npx sv create
+- Smooth horizontal scrolling
+- Dynamic button visibility based on scroll position
+- Customizable button styles and icons
+- Responsive design
+- Built with TypeScript
+- Tailwind CSS support
 
-# create a new project in my-app
-npx sv create my-app
+## Usage
+
+```svelte
+<script lang="ts">
+import { Slider } from 'svelte-slider';
+import type { SliderItem } from 'svelte-slider';
+
+const cardItems: SliderItem[] = [
+                                    {
+                                        Item: Your Snippet,
+                                        href: '/link',
+                                        data: { / your card data / }
+                                    }
+                                ];
+
+</script>
+
+<Slider {cardItems} />
 ```
 
-## Developing
+## Components
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Slider
 
-```bash
-npm run dev
+The main component that orchestrates the slider functionality.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+#### Props
+
+- `cardItems`: Array of `SliderItem` objects
+- `buttonProps`: (Optional) Customization options for the slider buttons
+
+### ButtonSlider
+
+Handles the navigation buttons for the slider.
+
+#### Props
+
+- `direction`: 'left' | 'right'
+- `containerClasses`: Custom classes for the button container
+- `buttonClasses`: Custom classes for the button element
+- `iconClasses`: Custom classes for the icon
+- `gradientClasses`: Custom classes for the gradient background
+- `Icon`: Custom icon component (optional)
+- `scrollFunc`: Function to handle scroll behavior
+
+### SliderContainer
+
+Contains the scrollable content of the slider.
+
+#### Props
+
+- `scrollContainer`: Reference to the container element
+- `cardItems`: Array of items to display
+- `scrollEvent`: Function to handle scroll events
+
+## Types
+
+```typescript
+
+interface SliderItem {
+    Item: Snippet<[any]>;
+    href: string;
+    data: any;
+}
+
+interface ButtonSliderR {
+    containerClasses?: string;
+    buttonClasses?: string;
+    iconClasses?: string;
+    gradientClasses?: string;
+    Icon?: typeof IconType; // Lucide Icons type
+}
+
+interface SliderProps {
+    cardItems: SliderItem[];
+    buttonProps?: ButtonSliderR;
+}
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Customization
 
-## Building
+The slider comes with default styling using Tailwind CSS, but you can customize the appearance by passing custom classes through the `buttonProps`:
 
-To build your library:
-
-```bash
-npm run package
+```svelte
+<Slider
+    cardItems={items}
+    buttonProps={{
+        containerClasses: "your-custom-container-classes",
+        buttonClasses: "your-custom-button-classes",
+        iconClasses: "your-custom-icon-classes",
+        gradientClasses: "your-custom-gradient-classes"
+    }}
+/>
 ```
 
-To create a production version of your showcase app:
+## Dependencies
 
-```bash
-npm run build
-```
+- Svelte 5.0.0 or higher
+- Lucide Svelte (for default icons)
+- Tailwind CSS (optional but recommended)
 
-You can preview the production build with `npm run preview`.
+## Contributing
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Publishing
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
