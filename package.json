@@ -1,24 +1,21 @@
 {
   "name": "svelte-slider",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build && npm run package",
-    "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
-    "prepublishOnly": "npm run package",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write .",
-    "lint": "prettier --check ."
-  },
+  "author": "Gradleless <https://github.com/Gradleless>",
+	"description": "A svelte 5 slider customisable and lightweight",
+	"scripts": {
+		"build": "npm run package",
+		"dev": "npm run watch",
+		"dev:svelte": "vite dev",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"test": "vitest",
+		"watch": "svelte-kit sync && svelte-package --watch"
+	},
   "files": [
     "dist",
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
-  ],
-  "sideEffects": [
-    "**/*.css"
   ],
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",

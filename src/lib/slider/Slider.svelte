@@ -2,7 +2,8 @@
 	import SliderContainer from '$lib/slider/SliderContainer.svelte';
 	import ButtonSlider from '$lib/slider/ButtonSlider.svelte';
 	import type { SliderProps } from '../types.js';
-
+	import '$lib/slider/slider.css';
+	
 	let { cardItems, buttonProps, Item }: SliderProps = $props();
 
 	let scrollContainer = $state<HTMLUListElement>();
