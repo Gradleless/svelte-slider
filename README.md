@@ -2,6 +2,12 @@
 
 A modern, customizable slider component built for Svelte 5. (Kinda poorly written)
 
+## Installation
+
+```bash
+npm i svelte5-slider
+```
+
 ## Features
 
 - Smooth horizontal scrolling
