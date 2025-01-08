@@ -15,7 +15,6 @@ interface ButtonSliderR {
 	containerClasses?: string;
 	buttonClasses?: string;
 	iconClasses?: string;
-	gradientClasses?: string;
 	Icon?: typeof IconType;
 }
 interface ButtonSliderProps extends ButtonSliderR {

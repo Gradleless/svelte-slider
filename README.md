@@ -55,7 +55,6 @@ Handles the navigation buttons for the slider.
 - `containerClasses`: Custom classes for the button container
 - `buttonClasses`: Custom classes for the button element
 - `iconClasses`: Custom classes for the icon
-- `gradientClasses`: Custom classes for the gradient background
 - `Icon`: Custom icon component (optional)
 - `scrollFunc`: Function to handle scroll behavior
 
@@ -105,7 +104,6 @@ The slider comes with default styling using Tailwind CSS, but you can customize 
         containerClasses: "your-custom-container-classes",
         buttonClasses: "your-custom-button-classes",
         iconClasses: "your-custom-icon-classes",
-        gradientClasses: "your-custom-gradient-classes"
     }}
     {Item}
 />
