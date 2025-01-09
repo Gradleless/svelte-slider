@@ -4,7 +4,7 @@
 	import type { SliderProps } from '../types.js';
 	import '$lib/slider/slider.css';
 	
-	let { cardItems, buttonProps, Item }: SliderProps = $props();
+	let { cardItems, buttonProps, Item, axis, gap }: SliderProps = $props();
 
 	let scrollContainer = $state<HTMLUListElement>();
 	let showLeftButton = $state(false);
@@ -48,7 +48,7 @@
 </script>
 
 <div class="relative">
-	<SliderContainer bind:scrollContainer scrollEvent={checkScrollButtons} {cardItems} {Item} />
+	<SliderContainer bind:scrollContainer scrollEvent={checkScrollButtons} {cardItems} {Item} {axis} {gap} />
 
 	{#if showRightButton}
 		<ButtonSlider

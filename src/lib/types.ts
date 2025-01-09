@@ -9,6 +9,8 @@ interface SliderProps {
 	Item: Snippet<[any]>;
 	cardItems: SliderItem[];
 	buttonProps?: ButtonSliderR;
+	axis: 'x' | 'y';
+	gap?: number | string;
 }
 
 interface ButtonSliderR {
@@ -27,6 +29,8 @@ interface SliderContainerProps {
 	scrollContainer: HTMLUListElement | undefined;
 	cardItems: SliderProps['cardItems'];
 	scrollEvent: () => void;
+	axis: 'x' | 'y';
+	gap?: number | string;
 }
 
 export type { SliderItem, SliderProps, ButtonSliderR, ButtonSliderProps, SliderContainerProps };
